@@ -293,6 +293,22 @@ section { padding: 80px 0; }
 .price-btn.outline { border: 1px solid var(--border); color: var(--text); }
 .price-btn.outline:hover { border-color: var(--lime); }
 
+/* LANGUAGES */
+.lang-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; max-width: 940px; margin: 0 auto; }
+@media(max-width: 900px){ .lang-grid { grid-template-columns: repeat(3, 1fr); } }
+@media(max-width: 560px){ .lang-grid { grid-template-columns: repeat(2, 1fr); } }
+.lang-card {
+  background: var(--navy-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 12px; text-align: center;
+  transition: border-color .25s, transform .25s;
+}
+.lang-card:hover { border-color: rgba(159,210,74,0.4); transform: translateY(-3px); }
+.lang-card .code {
+  font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  color: var(--lime); text-transform: uppercase; margin-bottom: 8px;
+}
+.lang-card .name { font-size: 16px; font-weight: 600; color: var(--text); }
+
 /* FAQ */
 .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 940px; margin: 0 auto; }
 @media(max-width: 720px){ .faq-grid { grid-template-columns: 1fr; } }
@@ -373,6 +389,7 @@ code.kbd {
     <div class="nav-links">
       <a href="#features">Funcionalidades</a>
       <a href="#imagens">Imagens</a>
+      <a href="#langs">Idiomas</a>
       <a href="#how">Como funciona</a>
       <a href="#docs">Documentação</a>
       <a href="#pricing">Preços</a>
@@ -493,6 +510,24 @@ code.kbd {
     </div>
   </div>
 </div>
+
+<section id="langs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">Idiomas</div>
+      <h2>Fala a tua língua</h2>
+      <p>A interface da aplicação está disponível em 6 idiomas — muda a qualquer momento no menu Language.</p>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card reveal"><div class="code">PT</div><div class="name">Português</div></div>
+      <div class="lang-card reveal"><div class="code">EN</div><div class="name">English</div></div>
+      <div class="lang-card reveal"><div class="code">FR</div><div class="name">Français</div></div>
+      <div class="lang-card reveal"><div class="code">DE</div><div class="name">Deutsch</div></div>
+      <div class="lang-card reveal"><div class="code">ZH</div><div class="name">中文</div></div>
+      <div class="lang-card reveal"><div class="code">JA</div><div class="name">日本語</div></div>
+    </div>
+  </div>
+</section>
 
 <section id="how">
   <div class="wrap">
