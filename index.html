@@ -117,6 +117,35 @@ nav {
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(159,210,74,0.3); color: var(--navy-deep) !important; }
 @media(max-width: 760px){ .nav-links a:not(.nav-cta){ display:none; } }
 
+/* LANG DROPDOWN */
+.lang-dd { position: relative; }
+.lang-btn {
+  background: none; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text-mute); font-family: 'Geist', sans-serif; font-size: 14px;
+  padding: 8px 14px; cursor: pointer; transition: all .2s;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.lang-btn:hover { border-color: var(--lime); color: var(--text); }
+.lang-btn .globe { width: 15px; height: 15px; stroke: var(--lime); }
+.lang-menu {
+  position: absolute; top: calc(100% + 10px); right: 0;
+  background: var(--navy-deep); border: 1px solid var(--border);
+  border-radius: 12px; padding: 6px; min-width: 160px; display: none;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5); z-index: 60;
+}
+.lang-menu.open { display: block; }
+.lang-menu button {
+  display: flex; width: 100%; align-items: center; gap: 10px;
+  padding: 9px 12px; background: none; border: 0; border-radius: 8px;
+  color: var(--text-mute); font-family: 'Geist', sans-serif; font-size: 14px;
+  cursor: pointer; text-align: left; transition: all .15s;
+}
+.lang-menu button:hover { background: rgba(159,210,74,0.08); color: var(--text); }
+.lang-menu button .cc {
+  font-family: 'Geist Mono', monospace; font-size: 10.5px; color: var(--lime);
+  border: 1px solid rgba(159,210,74,0.3); border-radius: 5px; padding: 1px 5px;
+}
+
 /* HERO */
 header { padding: 180px 0 90px; text-align: center; }
 .eyebrow {
@@ -231,7 +260,6 @@ section { padding: 80px 0; }
 
 /* SHOWCASE: real screenshots */
 .showcase { padding: 70px 0 30px; }
-.shot-main { max-width: 940px; margin: 0 auto 16px; }
 .shot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 940px; margin: 0 auto; }
 @media(max-width: 720px){ .shot-grid { grid-template-columns: 1fr; } }
 .shot {
@@ -246,6 +274,22 @@ section { padding: 80px 0; }
   font-family: 'Geist Mono', monospace; border-top: 1px solid var(--border);
 }
 .shot figcaption b { color: var(--lime); font-weight: 400; }
+
+/* LANGUAGES */
+.lang-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; max-width: 940px; margin: 0 auto; }
+@media(max-width: 900px){ .lang-grid { grid-template-columns: repeat(3, 1fr); } }
+@media(max-width: 560px){ .lang-grid { grid-template-columns: repeat(2, 1fr); } }
+.lang-card {
+  background: var(--navy-card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px 12px; text-align: center;
+  transition: border-color .25s, transform .25s; cursor: pointer;
+}
+.lang-card:hover { border-color: rgba(159,210,74,0.4); transform: translateY(-3px); }
+.lang-card .code {
+  font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  color: var(--lime); text-transform: uppercase; margin-bottom: 8px;
+}
+.lang-card .name { font-size: 16px; font-weight: 600; color: var(--text); }
 
 /* HOW IT WORKS */
 .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px 0; counter-reset: step; }
@@ -292,32 +336,6 @@ section { padding: 80px 0; }
 .price-btn.solid:hover { box-shadow: 0 8px 28px rgba(159,210,74,0.35); transform: translateY(-1px); }
 .price-btn.outline { border: 1px solid var(--border); color: var(--text); }
 .price-btn.outline:hover { border-color: var(--lime); }
-
-/* LANGUAGES */
-.lang-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; max-width: 940px; margin: 0 auto; }
-@media(max-width: 900px){ .lang-grid { grid-template-columns: repeat(3, 1fr); } }
-@media(max-width: 560px){ .lang-grid { grid-template-columns: repeat(2, 1fr); } }
-.lang-card {
-  background: var(--navy-card); border: 1px solid var(--border);
-  border-radius: 14px; padding: 22px 12px; text-align: center;
-  transition: border-color .25s, transform .25s;
-}
-.lang-card:hover { border-color: rgba(159,210,74,0.4); transform: translateY(-3px); }
-.lang-card .code {
-  font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
-  color: var(--lime); text-transform: uppercase; margin-bottom: 8px;
-}
-.lang-card .name { font-size: 16px; font-weight: 600; color: var(--text); }
-
-/* FAQ */
-.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 940px; margin: 0 auto; }
-@media(max-width: 720px){ .faq-grid { grid-template-columns: 1fr; } }
-.faq-card {
-  background: var(--navy-card); border: 1px solid var(--border);
-  border-radius: 14px; padding: 26px;
-}
-.faq-card h3 { font-size: 16.5px; font-weight: 600; margin-bottom: 8px; color: var(--lime); }
-.faq-card p { color: var(--text-mute); font-size: 14.5px; }
 
 /* FINAL CTA */
 .final {
@@ -387,12 +405,25 @@ code.kbd {
       Art-Net Remapper
     </div>
     <div class="nav-links">
-      <a href="#features">Funcionalidades</a>
-      <a href="#imagens">Imagens</a>
-      <a href="#langs">Idiomas</a>
-      <a href="#how">Como funciona</a>
-      <a href="#docs">Documentação</a>
-      <a href="#pricing">Preços</a>
+      <a href="#features" data-i="n1">Funcionalidades</a>
+      <a href="#imagens" data-i="n2">Imagens</a>
+      <a href="#how" data-i="n3">Como funciona</a>
+      <a href="#docs" data-i="n4">Documentação</a>
+      <a href="#pricing" data-i="n5">Preços</a>
+      <div class="lang-dd">
+        <button class="lang-btn" id="langBtn" type="button">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+          <span id="langCur">PT</span> ▾
+        </button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="pt"><span class="cc">PT</span>Português</button>
+          <button data-lang="en"><span class="cc">EN</span>English</button>
+          <button data-lang="fr"><span class="cc">FR</span>Français</button>
+          <button data-lang="de"><span class="cc">DE</span>Deutsch</button>
+          <button data-lang="zh"><span class="cc">ZH</span>中文</button>
+          <button data-lang="ja"><span class="cc">JA</span>日本語</button>
+        </div>
+      </div>
       <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="nav-cta">Download</a>
     </div>
   </div>
@@ -400,14 +431,14 @@ code.kbd {
 
 <header>
   <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span>Windows · Art-Net / DMX512 · Tempo real</span>
-    <h1>Remapeia canais Art-Net <em>em tempo real</em></h1>
-    <p class="subtitle">Faz a tua mesa de luz falar com qualquer visualizador 3D. O Art-Net Remapper traduz os canais entre fixtures com layouts diferentes — sem reprogramar, sem latência.</p>
+    <span class="eyebrow" data-i="eb"><span class="dot"></span>Windows · Art-Net / DMX512 · Tempo real</span>
+    <h1 data-i="h1">Remapeia canais Art-Net <em>em tempo real</em></h1>
+    <p class="subtitle" data-i="sub">Faz a tua mesa de luz falar com qualquer visualizador 3D. O Art-Net Remapper traduz os canais entre fixtures com layouts diferentes — sem reprogramar, sem latência.</p>
     <div class="hero-btns">
-      <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary">Descarregar grátis</a>
-      <a href="#how" class="btn-ghost">Ver como funciona</a>
+      <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary" data-i="b1">Descarregar grátis</a>
+      <a href="#how" class="btn-ghost" data-i="b2">Ver como funciona</a>
     </div>
-    <p class="hero-meta">v89 · Versão gratuita · Sem registo</p>
+    <p class="hero-meta" data-i="meta">v89 · Versão gratuita · Sem registo</p>
     <figure class="hero-shot reveal in">
       <img src="Imagens/Art1.jpg" alt="Art-Net Remapper — aba Routings com mapeamento visual de canais">
     </figure>
@@ -419,21 +450,21 @@ code.kbd {
     <div class="flow-card reveal">
       <div class="flow">
         <div class="flow-node">
-          <div class="label">Console</div>
+          <div class="label" data-i="f1a">Console</div>
           <div class="name">Fixture A</div>
-          <div class="desc">Programado no teu controlador</div>
+          <div class="desc" data-i="f1c">Programado no teu controlador</div>
         </div>
         <div class="flow-arrow"><div class="track"></div><div class="pulse"></div></div>
         <div class="flow-node remapper">
           <div class="label">Art-Net Remapper</div>
-          <div class="name">Remap em tempo real</div>
-          <div class="desc">Tradução de canais 1-para-1</div>
+          <div class="name" data-i="f2b">Remap em tempo real</div>
+          <div class="desc" data-i="f2c">Tradução de canais 1-para-1</div>
         </div>
         <div class="flow-arrow delay2"><div class="track"></div><div class="pulse"></div></div>
         <div class="flow-node">
-          <div class="label">Visualizador 3D</div>
+          <div class="label" data-i="f3a">Visualizador 3D</div>
           <div class="name">Fixture B</div>
-          <div class="desc">A única na biblioteca</div>
+          <div class="desc" data-i="f3c">A única na biblioteca</div>
         </div>
       </div>
     </div>
@@ -443,40 +474,40 @@ code.kbd {
 <section id="features">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">Porquê</div>
-      <h2>Feito para quem programa luz a sério</h2>
-      <p>Sem latência percetível, sem dependências externas. Apenas o sinal a chegar onde precisa.</p>
+      <div class="section-tag" data-i="fet">Porquê</div>
+      <h2 data-i="feh">Feito para quem programa luz a sério</h2>
+      <p data-i="fep">Sem latência percetível, sem dependências externas. Apenas o sinal a chegar onde precisa.</p>
     </div>
     <div class="features">
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tempo real</h3>
-        <p>Ciclo de envio constante que transmite todos os universos sem saltos nem rate-limiting. O sinal é estável e previsível.</p>
+        <h3 data-i="ft1">Tempo real</h3>
+        <p data-i="fd1">Ciclo de envio constante que transmite todos os universos sem saltos nem rate-limiting. O sinal é estável e previsível.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 8h7m0 0V4m0 4v4m9 4h-7m0 0v4m0-4V8" stroke-linecap="round"/></svg></div>
-        <h3>Remapping flexível</h3>
-        <p>Routings visuais canal-a-canal: auto-map 1:1, inversão com INV, limites MIN/MAX por canal. Duplica, exporta e importa routings.</p>
+        <h3 data-i="ft2">Remapping flexível</h3>
+        <p data-i="fd2">Routings visuais canal-a-canal: auto-map 1:1, inversão com INV, limites MIN/MAX por canal. Duplica, exporta e importa routings.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></div>
-        <h3>Monitor e Log</h3>
-        <p>Acompanha o tráfego Art-Net em direto e diagnostica problemas com um registo detalhado de tudo o que entra e sai.</p>
+        <h3 data-i="ft3">Monitor e Log</h3>
+        <p data-i="fd3">Acompanha o tráfego Art-Net em direto e diagnostica problemas com um registo detalhado de tudo o que entra e sai.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Passthrough seguro</h3>
-        <p>Os universos de destino nunca são sobrescritos por pacotes de entrada — adeus saltos intermitentes de fixtures.</p>
+        <h3 data-i="ft4">Passthrough seguro</h3>
+        <p data-i="fd4">Os universos de destino nunca são sobrescritos por pacotes de entrada — adeus saltos intermitentes de fixtures.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3m10-10h-3M5 12H2m15.5-6.5l-2 2m-7 7l-2 2m11 0l-2-2m-7-7l-2-2" stroke-linecap="round"/></svg></div>
-        <h3>6 idiomas</h3>
-        <p>Interface disponível em Português, Inglês, Francês, Alemão, Chinês e Japonês. Trabalha na tua língua.</p>
+        <h3 data-i="ft5">6 idiomas</h3>
+        <p data-i="fd5">Interface disponível em Português, Inglês, Francês, Alemão, Chinês e Japonês. Trabalha na tua língua.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg></div>
-        <h3>Standalone</h3>
-        <p>Executável único para Windows. Sem instalação complexa, sem runtimes externos. Abre e está a funcionar.</p>
+        <h3 data-i="ft6">Standalone</h3>
+        <p data-i="fd6">Executável único para Windows. Sem instalação complexa, sem runtimes externos. Abre e está a funcionar.</p>
       </div>
     </div>
   </div>
@@ -485,27 +516,27 @@ code.kbd {
 <div class="showcase" id="imagens">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">A aplicação</div>
-      <h2>Vê em ação</h2>
-      <p>Cria os routings, faz o patch das fixtures e monitoriza o tráfego Art-Net em direto.</p>
+      <div class="section-tag" data-i="sct">A aplicação</div>
+      <h2 data-i="sch">Vê em ação</h2>
+      <p data-i="scp">Cria os routings, faz o patch das fixtures e monitoriza o tráfego Art-Net em direto.</p>
     </div>
 
     <div class="shot-grid">
       <figure class="shot reveal">
         <a href="Imagens/Art1.jpg" target="_blank"><img src="Imagens/Art1.jpg" alt="Aba Routings — mapeamento visual de canais" loading="lazy"></a>
-        <figcaption><b>Routings</b> — mapeamento visual de canais</figcaption>
+        <figcaption data-i="c1"><b>Routings</b> — mapeamento visual de canais</figcaption>
       </figure>
       <figure class="shot reveal">
         <a href="Imagens/Art2.jpg" target="_blank"><img src="Imagens/Art2.jpg" alt="Aba Patch — tabela de fixtures" loading="lazy"></a>
-        <figcaption><b>Patch</b> — universo+endereço IN → OUT</figcaption>
+        <figcaption data-i="c2"><b>Patch</b> — universo+endereço IN → OUT</figcaption>
       </figure>
       <figure class="shot reveal">
         <a href="Imagens/Art3.jpg" target="_blank"><img src="Imagens/Art3.jpg" alt="Monitor — universo de entrada" loading="lazy"></a>
-        <figcaption><b>Monitor</b> — universo 0, canais IN</figcaption>
+        <figcaption data-i="c3"><b>Monitor</b> — universo 0, canais IN</figcaption>
       </figure>
       <figure class="shot reveal">
         <a href="Imagens/Art4.jpg" target="_blank"><img src="Imagens/Art4.jpg" alt="Monitor — universo de saída" loading="lazy"></a>
-        <figcaption><b>Monitor</b> — universo 10, saída remapeada</figcaption>
+        <figcaption data-i="c4"><b>Monitor</b> — universo 10, saída remapeada</figcaption>
       </figure>
     </div>
   </div>
@@ -514,17 +545,17 @@ code.kbd {
 <section id="langs">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">Idiomas</div>
-      <h2>Fala a tua língua</h2>
-      <p>A interface da aplicação está disponível em 6 idiomas — muda a qualquer momento no menu Language.</p>
+      <div class="section-tag" data-i="lgt">Idiomas</div>
+      <h2 data-i="lgh">Fala a tua língua</h2>
+      <p data-i="lgp">A interface da aplicação está disponível em 6 idiomas — e este site também. Clica num idioma para trocar.</p>
     </div>
     <div class="lang-grid">
-      <div class="lang-card reveal"><div class="code">PT</div><div class="name">Português</div></div>
-      <div class="lang-card reveal"><div class="code">EN</div><div class="name">English</div></div>
-      <div class="lang-card reveal"><div class="code">FR</div><div class="name">Français</div></div>
-      <div class="lang-card reveal"><div class="code">DE</div><div class="name">Deutsch</div></div>
-      <div class="lang-card reveal"><div class="code">ZH</div><div class="name">中文</div></div>
-      <div class="lang-card reveal"><div class="code">JA</div><div class="name">日本語</div></div>
+      <div class="lang-card reveal" onclick="setLang('pt')"><div class="code">PT</div><div class="name">Português</div></div>
+      <div class="lang-card reveal" onclick="setLang('en')"><div class="code">EN</div><div class="name">English</div></div>
+      <div class="lang-card reveal" onclick="setLang('fr')"><div class="code">FR</div><div class="name">Français</div></div>
+      <div class="lang-card reveal" onclick="setLang('de')"><div class="code">DE</div><div class="name">Deutsch</div></div>
+      <div class="lang-card reveal" onclick="setLang('zh')"><div class="code">ZH</div><div class="name">中文</div></div>
+      <div class="lang-card reveal" onclick="setLang('ja')"><div class="code">JA</div><div class="name">日本語</div></div>
     </div>
   </div>
 </section>
@@ -532,35 +563,35 @@ code.kbd {
 <section id="how">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">Como funciona</div>
-      <h2>Cinco passos até ao sinal certo</h2>
-      <p>O mesmo workflow que encontras no separador Help da aplicação.</p>
+      <div class="section-tag" data-i="hwt">Como funciona</div>
+      <h2 data-i="hwh">Cinco passos até ao sinal certo</h2>
+      <p data-i="hwp">O mesmo workflow que encontras no separador Help da aplicação.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="num">1</div>
-        <h3>Configura os IPs</h3>
-        <p>Na barra de topo, define o Input IP (onde o PC escuta o Art-Net da mesa) e o Output IP (para onde o sinal traduzido é enviado). Porta 6454 por defeito.</p>
+        <h3 data-i="s1t">Configura os IPs</h3>
+        <p data-i="s1p">Na barra de topo, define o Input IP (onde o PC escuta o Art-Net da mesa) e o Output IP (para onde o sinal traduzido é enviado). Porta 6454 por defeito.</p>
       </div>
       <div class="step reveal">
         <div class="num">2</div>
-        <h3>Cria o Routing</h3>
-        <p>Define os canais de ORIGEM (fixture A) e de DESTINO (fixture B). Usa o Auto-map 1:1 ou liga canal a canal. Inverte com INV e limita o alcance com os faders MIN/MAX.</p>
+        <h3 data-i="s2t">Cria o Routing</h3>
+        <p data-i="s2p">Define os canais de ORIGEM (fixture A) e de DESTINO (fixture B). Usa o Auto-map 1:1 ou liga canal a canal. Inverte com INV e limita o alcance com os faders MIN/MAX.</p>
       </div>
       <div class="step reveal">
         <div class="num">3</div>
-        <h3>Faz o Patch da fixture</h3>
-        <p>Indica o universo e endereço de entrada (o que a mesa envia) e os de saída (onde o visualizador escuta). IN e OUT têm de estar em universos diferentes.</p>
+        <h3 data-i="s3t">Faz o Patch da fixture</h3>
+        <p data-i="s3p">Indica o universo e endereço de entrada (o que a mesa envia) e os de saída (onde o visualizador escuta). IN e OUT têm de estar em universos diferentes.</p>
       </div>
       <div class="step reveal">
         <div class="num">4</div>
-        <h3>Inicia o proxy</h3>
-        <p>Carrega em START. O indicador fica verde (RUNNING). O remapper interceta o Art-Net de entrada, aplica os routings e reemite na saída em tempo real.</p>
+        <h3 data-i="s4t">Inicia o proxy</h3>
+        <p data-i="s4p">Carrega em START. O indicador fica verde (RUNNING). O remapper interceta o Art-Net de entrada, aplica os routings e reemite na saída em tempo real.</p>
       </div>
       <div class="step reveal">
         <div class="num">5</div>
-        <h3>Confirma no Monitor</h3>
-        <p>No separador Monitor, as células azuis são canais IN e as verdes são OUT. O brilho reflete o valor DMX. Mexe um fader na mesa e vê o canal a reagir.</p>
+        <h3 data-i="s5t">Confirma no Monitor</h3>
+        <p data-i="s5p">No separador Monitor, as células azuis são canais IN e as verdes são OUT. O brilho reflete o valor DMX. Mexe um fader na mesa e vê o canal a reagir.</p>
       </div>
     </div>
   </div>
@@ -569,22 +600,21 @@ code.kbd {
 <section id="docs">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">Documentação</div>
-      <h2>Tudo o que precisas de saber</h2>
-      <p>O guia técnico completo, igual ao que vem dentro da aplicação no separador Help.</p>
+      <div class="section-tag" data-i="dct">Documentação</div>
+      <h2 data-i="dch">Tudo o que precisas de saber</h2>
+      <p data-i="dcp">O guia técnico completo, igual ao que vem dentro da aplicação no separador Help.</p>
     </div>
     <div class="docs-block">
 
-      <div class="doc-group reveal">
+      <div class="doc-group reveal" data-i="g1">
         <h3>Visão geral</h3>
         <p>O Art-Net Remapper funciona como proxy entre uma fonte Art-Net (mesa ou software de iluminação) e um destino (visualizador 3D ou hardware físico). Recebe os pacotes Art-Net, aplica um mapeamento canal a canal — o routing — e reemite-os num universo diferente, para que o destino receba os dados no formato que espera.</p>
         <p>Caso típico: a tua mesa envia um perfil de fixture que não coincide com o que o visualizador aceita. Em vez de voltar a fazer o patch na mesa, remapeias os canais em tempo real.</p>
       </div>
 
-      <div class="doc-group reveal">
+      <div class="doc-group reveal" data-i="g2">
         <h3>Configuração de rede</h3>
         <p>O Art-Net é um protocolo de rede (UDP, porta <code class="kbd">6454</code>). O proxy precisa de um IP para escutar (entrada) e de um IP para enviar (saída). Numa só máquina tens duas opções.</p>
-
         <h4>Opção A — Loopback (um só PC)</h4>
         <p>Adiciona um Microsoft Loopback Adapter com o IP <code class="kbd">2.0.0.1</code>. Configura a mesa para enviar Art-Net para esse IP. O remapper escuta em <code class="kbd">2.0.0.1</code> e envia para <code class="kbd">2.0.0.2</code>. O visualizador escuta em <code class="kbd">2.0.0.2</code>.</p>
         <p>Como adicionar um Microsoft Loopback Adapter no Windows:</p>
@@ -594,23 +624,20 @@ code.kbd {
           <li><b>Install the hardware that I manually select</b> → <b>Network adapters</b> → <b>Microsoft</b> → <b>Microsoft KM-TEST Loopback Adapter</b>.</li>
           <li>Depois de instalar, abre <b>Network Connections</b>, encontra o novo adaptador e define o IPv4 estático <code class="kbd">2.0.0.1</code> / <code class="kbd">255.0.0.0</code>. Adiciona um 2.º IP <code class="kbd">2.0.0.2</code> no mesmo adaptador (<b>Advanced</b> → <b>IP Settings</b> → <b>Add</b>).</li>
         </ul>
-
         <h4>Opção B — Rede física (vários PCs)</h4>
         <p>Mesa → PC remapper → visualizador / nó Art-Net, cada um na sua máquina. É a topologia padrão de produção.</p>
       </div>
 
-      <div class="doc-group reveal">
+      <div class="doc-group reveal" data-i="g3">
         <h3>Fluxo passo a passo</h3>
-
         <h4>Passo 1 — Configurar os IPs de entrada/saída</h4>
         <p>Na barra de topo da aplicação, define:</p>
         <ul>
           <li><b>Input IP:</b> o IP em que este PC escuta o Art-Net (o IP a que a tua mesa envia).</li>
           <li><b>Output IP:</b> o IP para onde o remapper envia o Art-Net traduzido (visualizador / nó / par de loopback).</li>
           <li><b>Porta:</b> <code class="kbd">6454</code> (default do Art-Net — não alterar salvo configuração personalizada).</li>
-          <li><b>Universos começam em:</b> escolhe 0 ou 1 para coincidir com a numeração da tua mesa. O protocolo Art-Net usa universos a começar em 0 (o primeiro universo na rede é o U0). Mas muitas mesas mostram esse mesmo universo como 1 na sua interface (Avolites, Hog, Sunlite…), enquanto outras usam 0 (MA2/MA3 e ETC Eos com as definições por defeito). Ajusta para que os números de universo no Patch coincidam com o que vês na mesa, evitando erros de off-by-one.</li>
+          <li><b>Universos começam em:</b> escolhe 0 ou 1 para coincidir com a numeração da tua mesa. O protocolo Art-Net usa universos a começar em 0. Muitas mesas mostram esse mesmo universo como 1 na interface (Avolites, Hog, Sunlite…), outras usam 0 (MA2/MA3, ETC Eos). Ajusta para evitar erros de off-by-one.</li>
         </ul>
-
         <h4>Passo 2 — Criar o Routing</h4>
         <p>Vai ao separador Routings. Carrega em <b>+ Novo</b> para criar um routing.</p>
         <ul>
@@ -619,8 +646,7 @@ code.kbd {
           <li>Carrega em <b>Auto-map 1:1</b> para um mapeamento direto, ou clica num canal de origem e depois num de destino para criar ligações manualmente.</li>
           <li>Usa o botão <b>INV</b> para inverter um canal (255 − valor) e os faders <b>MIN/MAX</b> para limitar o alcance. O fader <b>DEFAULT</b> define o valor dos canais de destino não mapeados.</li>
         </ul>
-        <div class="doc-note"><b>Dica</b>Escolhe como fixture B o perfil disponível na biblioteca do visualizador mais próximo da fixture A. Mesmo que não seja idêntico, mapear os canais-chave (Dimmer, Pan, Tilt, RGB…) dá-te uma pré-visualização utilizável.</div>
-
+        <div class="doc-note"><b>Dica</b>Escolhe como fixture B o perfil disponível na biblioteca do visualizador mais próximo da fixture A. Mapear os canais-chave (Dimmer, Pan, Tilt, RGB…) dá-te uma pré-visualização utilizável.</div>
         <h4>Passo 3 — Fazer o Patch da fixture</h4>
         <p>Vai ao separador Patch. Carrega em <b>+ Adicionar</b> para criar uma instância de fixture.</p>
         <ul>
@@ -628,11 +654,9 @@ code.kbd {
           <li><b>OUT Universe + OUT Address:</b> o universo/endereço onde os dados remapeados são reemitidos. O visualizador deve escutar neste universo.</li>
           <li>Se adicionares várias fixtures iguais, define Quantidade &gt; 1 — a aplicação incrementa os endereços automaticamente.</li>
         </ul>
-        <div class="doc-note"><b>Importante</b>IN e OUT têm de estar em universos diferentes — caso contrário o proxy não distingue os pacotes de entrada (a remapear) dos de saída (já remapeados). A aplicação obriga a esta regra.</div>
-
+        <div class="doc-note"><b>Importante</b>IN e OUT têm de estar em universos diferentes — caso contrário o proxy não distingue os pacotes de entrada dos de saída. A aplicação obriga a esta regra.</div>
         <h4>Passo 4 — Iniciar o proxy</h4>
-        <p>Carrega em <b>START</b> na barra de topo. O indicador de estado fica verde (RUNNING). O proxy passa a intercetar o Art-Net que chega ao Input IP, aplica todos os routings e reemite no Output IP.</p>
-
+        <p>Carrega em <b>START</b> na barra de topo. O indicador de estado fica verde (RUNNING). O proxy interceta o Art-Net que chega ao Input IP, aplica os routings e reemite no Output IP.</p>
         <h4>Passo 5 — Confirmar no separador Monitor</h4>
         <p>Muda para o separador Monitor. Vês a lista de universos com dados ou patch:</p>
         <ul>
@@ -640,10 +664,10 @@ code.kbd {
           <li><b>Células verdes:</b> canais com patch como OUT (reemitidos para o visualizador).</li>
           <li>O <b>brilho da célula</b> reflete o valor DMX em direto (0–255).</li>
         </ul>
-        <p>Mexe um fader na mesa — o canal IN correspondente deve reagir de imediato e o canal OUT mapeado deve acompanhar. Se nada se mexer, verifica o Input IP, as portas e o destino da mesa.</p>
+        <p>Mexe um fader na mesa — o canal IN correspondente deve reagir de imediato e o canal OUT mapeado deve acompanhar.</p>
       </div>
 
-      <div class="doc-group reveal">
+      <div class="doc-group reveal" data-i="g4">
         <h3>Licença e ativação</h3>
         <ul>
           <li><b>Como recebo a chave?</b> Por email, logo após a compra. Cola-a no separador License da app e carrega em Ativar.</li>
@@ -653,13 +677,13 @@ code.kbd {
         </ul>
       </div>
 
-      <div class="doc-group reveal">
+      <div class="doc-group reveal" data-i="g5">
         <h3>Resolução de problemas</h3>
         <ul>
           <li><b>Sem dados no Monitor:</b> confirma que a mesa envia para o IP correto e que a Firewall do Windows permite UDP de entrada na porta <code class="kbd">6454</code>.</li>
-          <li><b>Visualizador sem movimento:</b> confirma que o visualizador escuta no OUT Universe configurado no Patch e que o Output IP é alcançável a partir da máquina do visualizador.</li>
+          <li><b>Visualizador sem movimento:</b> confirma que o visualizador escuta no OUT Universe configurado no Patch e que o Output IP é alcançável.</li>
           <li><b>Erro de mesmo universo:</b> IN e OUT não podem partilhar universo — muda o OUT para um universo diferente.</li>
-          <li><b>Pacotes perdidos no Log:</b> erros elevados costumam indicar IP mal configurado ou outro processo a ocupar a porta <code class="kbd">6454</code> (fecha qualquer outro software Art-Net a correr localmente).</li>
+          <li><b>Pacotes perdidos no Log:</b> erros elevados costumam indicar IP mal configurado ou outro processo a ocupar a porta <code class="kbd">6454</code>.</li>
         </ul>
       </div>
 
@@ -670,36 +694,36 @@ code.kbd {
 <section id="pricing">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="section-tag">Preços</div>
-      <h2>Começa grátis. Cresce quando precisares.</h2>
-      <p>Sem subscrições. Uma licença, paga uma vez.</p>
+      <div class="section-tag" data-i="prt">Preços</div>
+      <h2 data-i="prh">Começa grátis. Cresce quando precisares.</h2>
+      <p data-i="prp">Sem subscrições. Uma licença, paga uma vez.</p>
     </div>
     <div class="pricing">
       <div class="price-card reveal">
-        <div class="plan">Gratuito</div>
+        <div class="plan" data-i="pl1">Gratuito</div>
         <div class="amount">0€</div>
-        <div class="note">Para sempre · sem registo</div>
-        <ul class="price-list">
+        <div class="note" data-i="pn1">Para sempre · sem registo</div>
+        <ul class="price-list" data-i="pu1">
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>1 routing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 4 fixtures</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>10 canais por routing</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>Monitor e Log completos</li>
         </ul>
-        <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="price-btn outline">Descarregar</a>
+        <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="price-btn outline" data-i="pb1">Descarregar</a>
       </div>
       <div class="price-card featured reveal">
         <div class="price-badge">Pro</div>
-        <div class="plan">Licença completa</div>
-        <div class="amount">39€ <span>/ uma vez</span></div>
-        <div class="note">Sem limites · até 2 máquinas · vitalícia</div>
-        <ul class="price-list">
+        <div class="plan" data-i="pl2">Licença completa</div>
+        <div class="amount" data-i="pa2">39€ <span>/ uma vez</span></div>
+        <div class="note" data-i="pn2">Sem limites · até 2 máquinas · vitalícia</div>
+        <ul class="price-list" data-i="pu2">
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>Routings ilimitados</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixtures ilimitadas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>Canais ilimitados</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>2 ativações de máquina</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M5 12l5 5 9-11" stroke-linecap="round" stroke-linejoin="round"/></svg>Funciona offline até 7 dias</li>
         </ul>
-        <a href="https://art-netremapper.lemonsqueezy.com/checkout/buy/41da57da-e5b2-44b3-b501-24868d908269" class="price-btn solid">Comprar licença</a>
+        <a href="https://art-netremapper.lemonsqueezy.com/checkout/buy/41da57da-e5b2-44b3-b501-24868d908269" class="price-btn solid" data-i="pb2">Comprar licença</a>
       </div>
     </div>
   </div>
@@ -707,9 +731,9 @@ code.kbd {
 
 <div class="wrap">
   <div class="final reveal">
-    <h2>Para o sinal exatamente onde precisa.</h2>
-    <p>Descarrega a versão gratuita e testa com o teu setup hoje.</p>
-    <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary" style="position:relative">Descarregar para Windows</a>
+    <h2 data-i="fnh">Para o sinal exatamente onde precisa.</h2>
+    <p data-i="fnp">Descarrega a versão gratuita e testa com o teu setup hoje.</p>
+    <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary" style="position:relative" data-i="fnb">Descarregar para Windows</a>
   </div>
 </div>
 
@@ -720,14 +744,15 @@ code.kbd {
       Art-Net Remapper
     </div>
     <div class="foot-links">
-      <a href="#features">Funcionalidades</a>
-      <a href="#docs">Documentação</a>
-      <a href="#pricing">Preços</a>
+      <a href="#features" data-i="fl1">Funcionalidades</a>
+      <a href="#docs" data-i="fl2">Documentação</a>
+      <a href="#pricing" data-i="fl3">Preços</a>
     </div>
     <div class="foot-copy">@JNeves · 2026 · Art-Net™ Designed by and Copyright Artistic Licence Holdings Ltd</div>
   </div>
 </footer>
 
+<script src="translations.js"></script>
 <script>
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -736,6 +761,32 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   el.style.transitionDelay = (i % 3) * 0.08 + 's';
   io.observe(el);
 });
+
+/* --- i18n --- */
+const langMenu = document.getElementById('langMenu');
+const langBtn = document.getElementById('langBtn');
+langBtn.addEventListener('click', (e) => { e.stopPropagation(); langMenu.classList.toggle('open'); });
+document.addEventListener('click', () => langMenu.classList.remove('open'));
+
+let _orig = null;
+function setLang(l) {
+  if (!_orig) {
+    _orig = {};
+    document.querySelectorAll('[data-i]').forEach(e => { _orig[e.dataset.i] = e.innerHTML; });
+  }
+  const dict = (l === 'pt') ? _orig : (window.I18N || {})[l];
+  if (!dict) return;
+  document.querySelectorAll('[data-i]').forEach(e => {
+    const t = (dict[e.dataset.i] !== undefined) ? dict[e.dataset.i] : _orig[e.dataset.i];
+    if (t !== undefined) e.innerHTML = t;
+  });
+  document.documentElement.lang = l;
+  try { localStorage.setItem('siteLang', l); } catch (_) {}
+  document.getElementById('langCur').textContent = l.toUpperCase();
+  langMenu.classList.remove('open');
+}
+document.querySelectorAll('#langMenu button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+try { const s = localStorage.getItem('siteLang'); if (s && s !== 'pt') setLang(s); } catch (_) {}
 </script>
 </body>
 </html>
