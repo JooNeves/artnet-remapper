@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art-Net Remapper — Remapeamento de canais Art-Net/DMX em tempo real</title>
+<meta name="description" content="Remapeamento de canais Art-Net/DMX em tempo real entre consolas de iluminação e visualizadores 3D. Traduz perfis de fixtures sem repatching. App Windows.">
+<meta property="og:title" content="Art-Net Remapper">
+<meta property="og:description" content="Remapeamento de canais Art-Net/DMX em tempo real. Traduz perfis de fixtures sem repatching.">
+<style>
+  :root{
+    --bg:#0b0d12; --bg2:#12151d; --card:#161a24; --border:#252b3a;
+    --text:#e8eaf0; --muted:#9aa3b5; --accent:#f5a623; --accent2:#ffd166;
+    --green:#3ddc84;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  header{padding:80px 0 60px;text-align:center;background:radial-gradient(ellipse at top,#1a1f2e 0%,var(--bg) 70%)}
+  .badge{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 14px;font-size:.8rem;color:var(--muted);margin-bottom:20px}
+  h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em;line-height:1.1}
+  h1 span{color:var(--accent)}
+  .tagline{font-size:1.15rem;color:var(--muted);max-width:640px;margin:18px auto 32px}
+  .cta{display:inline-block;background:var(--accent);color:#1a1200;font-weight:700;padding:14px 32px;border-radius:10px;font-size:1.05rem;transition:.2s}
+  .cta:hover{background:var(--accent2)}
+  .cta.ghost{background:transparent;color:var(--text);border:1px solid var(--border);margin-left:10px}
+  .cta.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .note{font-size:.85rem;color:var(--muted);margin-top:14px}
+  section{padding:64px 0}
+  h2{font-size:1.8rem;margin-bottom:8px;text-align:center}
+  .sub{text-align:center;color:var(--muted);margin-bottom:40px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px}
+  .card h3{font-size:1.1rem;margin-bottom:8px;color:var(--accent2)}
+  .card p{color:var(--muted);font-size:.95rem}
+  .flow{background:var(--bg2);border-radius:14px;border:1px solid var(--border);padding:30px;text-align:center;font-family:Consolas,monospace;font-size:.95rem;overflow-x:auto;white-space:nowrap}
+  .flow b{color:var(--accent)}
+  .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:760px;margin:0 auto}
+  .plan{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center}
+  .plan.pro{border-color:var(--accent)}
+  .plan h3{font-size:1.2rem}
+  .price{font-size:2.4rem;font-weight:800;margin:12px 0}
+  .price small{font-size:.9rem;color:var(--muted);font-weight:400}
+  .plan ul{list-style:none;text-align:left;margin:20px 0;color:var(--muted);font-size:.95rem}
+  .plan li{padding:6px 0 6px 26px;position:relative}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--green)}
+  .plan li.x::before{content:"—";color:var(--muted)}
+  .steps{counter-reset:s;max-width:640px;margin:0 auto}
+  .steps div{counter-increment:s;padding:14px 0 14px 54px;position:relative;color:var(--muted)}
+  .steps div::before{content:counter(s);position:absolute;left:0;top:12px;width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700}
+  .steps b{color:var(--text)}
+  footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:.85rem}
+  @media(max-width:600px){.cta.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="badge">Windows &nbsp;·&nbsp; v88 &nbsp;·&nbsp; por @JNeves</div>
+    <h1>Art-Net <span>Remapper</span></h1>
+    <p class="tagline">Remapeamento de canais Art-Net/DMX em tempo real entre consolas de iluminação e visualizadores 3D. Traduz perfis de fixtures sem repatching.</p>
+    <a class="cta" href="#download">Download grátis</a><a class="cta ghost" href="https://art-netremapper.lemonsqueezy.com/checkout/buy/41da57da-e5b2-44b3-b501-24868d908269">Comprar licença — 39&nbsp;€</a>
+    <p class="note">Versão grátis sem limite de tempo. Sem instalação: um único .exe.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Como funciona</h2>
+    <p class="sub">Um proxy Art-Net que fica entre a consola e o visualizador.</p>
+    <div class="flow">
+      Consola <b>→</b> Art-Net IN <b>→</b> &nbsp;[ <b>Art-Net Remapper</b> ]&nbsp; <b>→</b> Art-Net OUT <b>→</b> Visualizador 3D
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)">
+  <div class="wrap">
+    <h2>Funcionalidades</h2>
+    <p class="sub">Tudo o que precisas para traduzir perfis de fixtures entre sistemas.</p>
+    <div class="grid">
+      <div class="card"><h3>Routings visuais</h3><p>Cria templates de remapeamento canal-a-canal: clica origem → destino, auto-map 1:1, limites MIN/MAX por canal arrastando. Duplica, exporta e importa routings.</p></div>
+      <div class="card"><h3>Patch de fixtures</h3><p>Cada fixture recebe num universo+endereço, aplica o routing e emite noutro universo+endereço. Adiciona várias de uma vez com auto-incremento e deteção de colisões.</p></div>
+      <div class="card"><h3>Monitor em tempo real</h3><p>Vê os valores DMX de qualquer universo IN ou OUT ao vivo, com taxas RX/TX, contadores de pacotes e universos ativos.</p></div>
+      <div class="card"><h3>Log detalhado</h3><p>Eventos e modo verbose (cada pacote RX/TX) para debug. Copia para o clipboard ou guarda em ficheiro.</p></div>
+      <div class="card"><h3>Sessões</h3><p>Guarda e carrega sessões completas (routings + patch). Autosave automático para não perderes trabalho.</p></div>
+      <div class="card"><h3>6 idiomas</h3><p>Interface em Português, Inglês, Francês, Alemão, Chinês e Japonês.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Preços</h2>
+    <p class="sub">Começa grátis. Compra uma vez, é tua para sempre.</p>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Grátis</h3>
+        <div class="price">0 €</div>
+        <ul>
+          <li>Todas as funcionalidades da app</li>
+          <li>1 routing</li>
+          <li>4 fixtures</li>
+          <li>10 canais por routing</li>
+          <li class="x">Sem limite de tempo</li>
+        </ul>
+        <a class="cta ghost" style="margin:0" href="#download">Download</a>
+      </div>
+      <div class="plan pro">
+        <h3>Licença completa</h3>
+        <div class="price">39 € <small>pagamento único</small></div>
+        <ul>
+          <li>Routings ilimitados</li>
+          <li>Fixtures ilimitadas</li>
+          <li>Canais ilimitados</li>
+          <li>2 ativações por chave</li>
+          <li>Funciona offline até 7 dias entre verificações</li>
+          <li>Licença vitalícia — sem subscrição</li>
+        </ul>
+        <a class="cta" href="https://art-netremapper.lemonsqueezy.com/checkout/buy/41da57da-e5b2-44b3-b501-24868d908269">Comprar licença</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2)" id="download">
+  <div class="wrap">
+    <h2>Download</h2>
+    <p class="sub">Windows 10/11 · sem instalação · um único ficheiro .exe (~20 MB)</p>
+    <div style="text-align:center;margin-bottom:40px">
+      <a class="cta" href="https://github.com/JooNeves/artnet-remapper/releases/latest">Descarregar Art-Net Remapper v88</a>
+    </div>
+    <div class="steps">
+      <div><b>Descarrega e abre</b> o ArtNetRemapper.exe — não precisa de instalação.</div>
+      <div><b>Cria um routing</b> na aba Routings: liga canais de origem a canais de destino.</div>
+      <div><b>Faz o patch</b> na aba Patch: universo+endereço IN → routing → universo+endereço OUT.</div>
+      <div><b>Verifica no Monitor</b> os valores DMX a entrar e a sair em tempo real.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <div class="grid" style="max-width:760px;margin:0 auto">
+      <div class="card"><h3>Preciso de internet?</h3><p>Só para ativar a licença. Depois funciona offline até 7 dias entre verificações automáticas.</p></div>
+      <div class="card"><h3>Posso usar em 2 PCs?</h3><p>Sim — cada chave permite 2 ativações. Podes desativar num PC para libertar a ativação.</p></div>
+      <div class="card"><h3>É subscrição?</h3><p>Não. Pagamento único de 39 €, licença vitalícia.</p></div>
+      <div class="card"><h3>Como recebo a chave?</h3><p>Por email, logo após a compra. Cola-a na aba License da app e clica Ativar.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Art-Net Remapper © 2026 @JNeves &nbsp;·&nbsp; Art-Net™ Designed by and Copyright Artistic Licence Holdings Ltd
+  </div>
+</footer>
+
+</body>
+</html>
