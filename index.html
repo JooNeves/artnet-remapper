@@ -155,6 +155,12 @@ h1 em { font-style: italic; color: var(--lime); }
 }
 .btn-ghost:hover { border-color: var(--lime); background: rgba(159,210,74,0.05); }
 .hero-meta { margin-top: 26px; font-size: 13.5px; color: var(--text-faint); font-family: 'Geist Mono', monospace; }
+.hero-shot { max-width: 980px; margin: 56px auto 0; }
+.hero-shot img {
+  width: 100%; display: block; border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 90px -30px rgba(0,0,0,0.7), 0 0 60px rgba(159,210,74,0.08);
+}
 
 /* FLOW DIAGRAM */
 .flow-section { padding: 40px 0 90px; }
@@ -226,7 +232,7 @@ section { padding: 80px 0; }
 /* SHOWCASE: real screenshots */
 .showcase { padding: 70px 0 30px; }
 .shot-main { max-width: 940px; margin: 0 auto 16px; }
-.shot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 940px; margin: 0 auto; }
+.shot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 940px; margin: 0 auto; }
 @media(max-width: 720px){ .shot-grid { grid-template-columns: 1fr; } }
 .shot {
   display: block; background: var(--navy-deep);
@@ -384,7 +390,10 @@ code.kbd {
       <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary">Descarregar grátis</a>
       <a href="#how" class="btn-ghost">Ver como funciona</a>
     </div>
-    <p class="hero-meta">v89 · Versão gratuita · Sem registo · 30 Hz constante</p>
+    <p class="hero-meta">v89 · Versão gratuita · Sem registo</p>
+    <figure class="hero-shot reveal in">
+      <img src="Imagens/Art1.jpg" alt="Art-Net Remapper — aba Routings com mapeamento visual de canais">
+    </figure>
   </div>
 </header>
 
@@ -424,7 +433,7 @@ code.kbd {
     <div class="features">
       <div class="feature reveal">
         <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Tempo real, 30 Hz</h3>
+        <h3>Tempo real</h3>
         <p>Ciclo de envio constante que transmite todos os universos sem saltos nem rate-limiting. O sinal é estável e previsível.</p>
       </div>
       <div class="feature reveal">
@@ -464,12 +473,11 @@ code.kbd {
       <p>Cria os routings, faz o patch das fixtures e monitoriza o tráfego Art-Net em direto.</p>
     </div>
 
-    <figure class="shot shot-main reveal">
-      <a href="Imagens/Art1.jpg" target="_blank"><img src="Imagens/Art1.jpg" alt="Aba Routings — mapeamento visual de canais" loading="lazy"></a>
-      <figcaption><b>Routings</b> — liga canais de origem a destino com curvas visuais, INV e limites MIN/MAX</figcaption>
-    </figure>
-
     <div class="shot-grid">
+      <figure class="shot reveal">
+        <a href="Imagens/Art1.jpg" target="_blank"><img src="Imagens/Art1.jpg" alt="Aba Routings — mapeamento visual de canais" loading="lazy"></a>
+        <figcaption><b>Routings</b> — mapeamento visual de canais</figcaption>
+      </figure>
       <figure class="shot reveal">
         <a href="Imagens/Art2.jpg" target="_blank"><img src="Imagens/Art2.jpg" alt="Aba Patch — tabela de fixtures" loading="lazy"></a>
         <figcaption><b>Patch</b> — universo+endereço IN → OUT</figcaption>
