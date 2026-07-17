@@ -269,6 +269,8 @@ section { padding: 80px 0; }
 }
 .shot:hover { border-color: rgba(159,210,74,0.45); transform: translateY(-3px); }
 .shot img { width: 100%; display: block; }
+.shot video { width: 100%; display: block; }
+.shot-main { max-width: 940px; margin: 0 auto 16px; }
 .shot figcaption {
   padding: 11px 16px; font-size: 12.5px; color: var(--text-mute);
   font-family: 'Geist Mono', monospace; border-top: 1px solid var(--border);
@@ -437,7 +439,7 @@ code.kbd {
       <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary" data-i="b1">Descarregar grátis</a>
       <a href="#how" class="btn-ghost" data-i="b2">Ver como funciona</a>
     </div>
-    <p class="hero-meta" data-i="meta">v89 · Versão gratuita · Sem registo</p>
+    <p class="hero-meta" data-i="meta">Versão gratuita · Sem registo</p>
     <figure class="hero-shot reveal in">
       <img src="Imagens/Art1.jpg" alt="Art-Net Remapper — aba Routings com mapeamento visual de canais">
     </figure>
@@ -519,6 +521,11 @@ code.kbd {
       <h2 data-i="sch">Vê em ação</h2>
       <p data-i="scp">Cria os routings, faz o patch das fixtures e monitoriza o tráfego Art-Net em direto.</p>
     </div>
+
+    <figure class="shot shot-main reveal">
+      <video controls preload="metadata" poster="Imagens/Art1.jpg" src="Videos/demo.mp4"></video>
+      <figcaption data-i="c0"><b>Demo</b> — routing, patch e monitor em ação</figcaption>
+    </figure>
 
     <div class="shot-grid">
       <figure class="shot reveal">
