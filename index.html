@@ -99,13 +99,10 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo { display: flex; align-items: center; gap: 11px; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
-.logo-mark {
-  width: 26px; height: 26px; border-radius: 6px;
-  background: var(--lime);
-  display: grid; place-items: center;
-  box-shadow: 0 0 22px rgba(159,210,74,0.4);
+.logo-img {
+  width: 28px; height: 28px; border-radius: 7px; display: block;
+  box-shadow: 0 0 22px rgba(159,210,74,0.35);
 }
-.logo-mark svg { width: 15px; height: 15px; }
 .nav-links { display: flex; gap: 34px; align-items: center; }
 .nav-links a { color: var(--text-mute); text-decoration: none; font-size: 14.5px; transition: color .2s; }
 .nav-links a:hover { color: var(--text); }
@@ -373,9 +370,7 @@ code.kbd {
 <nav>
   <div class="nav-inner">
     <div class="logo">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M4 8h7m0 0V4m0 4v4m9 4h-7m0 0v4m0-4V8" stroke="#0d1b2a" stroke-width="2.4" stroke-linecap="round"/></svg>
-      </span>
+      <img class="logo-img" src="Logos/B_icon_256.png" alt="Art-Net Remapper">
       Art-Net Remapper
     </div>
     <div class="nav-links">
@@ -404,9 +399,8 @@ code.kbd {
 
 <header>
   <div class="wrap">
-    <span class="eyebrow" data-i="eb"><span class="dot"></span>Windows · Art-Net / DMX512 · Tempo real</span>
-    <h1 data-i="h1">Remapeia canais Art-Net <em>em tempo real</em></h1>
-    <p class="subtitle" data-i="sub">Faz a tua mesa de luz falar com qualquer visualizador 3D. O Art-Net Remapper traduz os canais entre fixtures com layouts diferentes — sem reprogramar, sem latência.</p>
+    <h1>Art-Net <em>Remapper</em></h1>
+    <p class="subtitle" data-i="sub">Routing de canais DMX por Art-Net.</p>
     <div class="hero-btns">
       <a href="https://github.com/JooNeves/artnet-remapper/releases/latest/download/ArtNetRemapper.exe" class="btn-primary" data-i="b1">Descarregar grátis</a>
       <a href="#how" class="btn-ghost" data-i="b2">Ver como funciona</a>
@@ -662,7 +656,7 @@ code.kbd {
 <footer>
   <div class="wrap foot-inner">
     <div class="logo">
-      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8h7m0 0V4m0 4v4m9 4h-7m0 0v4m0-4V8" stroke="#0d1b2a" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+      <img class="logo-img" src="Logos/B_icon_256.png" alt="">
       Art-Net Remapper
     </div>
     <div class="foot-links">
@@ -711,3 +705,4 @@ try { const s = localStorage.getItem('siteLang'); if (s && s !== 'pt') setLang(s
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
