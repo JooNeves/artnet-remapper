@@ -4,6 +4,7 @@ window.I18N._ck = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path
 const _ck = window.I18N._ck;
 
 window.I18N.en = {
+intro:`<p>Art-Net Remapper works as a proxy between an Art-Net source (console or lighting software) and a destination (3D visualizer or physical hardware). It receives Art-Net packets, applies a channel-by-channel mapping — the routing — and re-emits them on a different universe, so the destination receives the data in the format it expects.</p><p>Typical case: your console sends a fixture profile that does not match what the visualizer accepts. Instead of repatching the console, you remap the channels in real time.</p>`,
 fd1:`Art-Net proxy with a constant output cycle. Stable signal, no perceptible latency.`, fd2:`Visual channel-to-channel routings: 1:1 auto-map, INV inversion, MIN/MAX limits.`, fd6:`A single Windows .exe. No install. Interface in 6 languages.`, s1px:`Input IP (where you listen to the console) and Output IP (where you send). Port 6454.`, s2px:`Connect source channels to destination, or use 1:1 auto-map.`, s3px:`Universe+address IN → routing → universe+address OUT.`, s4px:`Press START and the remap runs in real time.`, s5px:`Watch DMX values coming in and going out, live.`, helpnote:`The full guide is in the app's Help tab.`,
 c0:`<b>Demo</b> — routing, patch and monitor in action`,
 n1:`Features`, n2:`Screenshots`, n3:`How it works`, n4:`Documentation`, n5:`Pricing`,
@@ -46,6 +47,7 @@ fl1:`Features`, fl2:`Documentation`, fl3:`Pricing`
 };
 
 window.I18N.fr = {
+intro:`<p>Art-Net Remapper fonctionne comme un proxy entre une source Art-Net (console ou logiciel lumière) et une destination (visualiseur 3D ou matériel physique). Il reçoit les paquets Art-Net, applique un mapping canal par canal — le routing — et les réémet sur un univers différent, pour que la destination reçoive les données au format attendu.</p><p>Cas typique : votre console envoie un profil de fixture qui ne correspond pas à ce que le visualiseur accepte. Au lieu de repatcher la console, vous remappez les canaux en temps réel.</p>`,
 fd1:`Proxy Art-Net à cycle d'envoi constant. Signal stable, sans latence perceptible.`, fd2:`Routings visuels canal par canal : auto-map 1:1, inversion INV, limites MIN/MAX.`, fd6:`Un seul .exe Windows. Sans installation. Interface en 6 langues.`, s1px:`Input IP (où vous écoutez la console) et Output IP (où vous envoyez). Port 6454.`, s2px:`Reliez les canaux source aux destinations, ou auto-map 1:1.`, s3px:`Univers+adresse IN → routing → univers+adresse OUT.`, s4px:`Appuyez sur START et le remap tourne en temps réel.`, s5px:`Voyez les valeurs DMX entrer et sortir, en direct.`, helpnote:`Le guide complet est dans l'onglet Help de l'application.`,
 c0:`<b>Démo</b> — routing, patch et monitor en action`,
 n1:`Fonctionnalités`, n2:`Captures`, n3:`Fonctionnement`, n4:`Documentation`, n5:`Tarifs`,
@@ -88,6 +90,7 @@ fl1:`Fonctionnalités`, fl2:`Documentation`, fl3:`Tarifs`
 };
 
 window.I18N.de = {
+intro:`<p>Art-Net Remapper arbeitet als Proxy zwischen einer Art-Net-Quelle (Pult oder Lichtsoftware) und einem Ziel (3D-Visualizer oder physische Hardware). Er empfängt Art-Net-Pakete, wendet ein Kanal-für-Kanal-Mapping an — das Routing — und sendet sie auf einem anderen Universum wieder aus, damit das Ziel die Daten im erwarteten Format erhält.</p><p>Typischer Fall: dein Pult sendet ein Fixture-Profil, das nicht zu dem passt, was der Visualizer akzeptiert. Statt das Pult neu zu patchen, remappst du die Kanäle in Echtzeit.</p>`,
 fd1:`Art-Net-Proxy mit konstantem Sendezyklus. Stabiles Signal, keine spürbare Latenz.`, fd2:`Visuelle Kanal-zu-Kanal-Routings: 1:1-Auto-Map, INV-Invertierung, MIN/MAX-Limits.`, fd6:`Eine einzige Windows-Exe. Keine Installation. Oberfläche in 6 Sprachen.`, s1px:`Input IP (wo du das Pult empfängst) und Output IP (wohin du sendest). Port 6454.`, s2px:`Quellkanäle mit Zielen verbinden, oder 1:1-Auto-Map.`, s3px:`Universum+Adresse IN → Routing → Universum+Adresse OUT.`, s4px:`START drücken — das Remap läuft in Echtzeit.`, s5px:`DMX-Werte live beim Ein- und Ausgehen beobachten.`, helpnote:`Die vollständige Anleitung steht im Help-Tab der App.`,
 c0:`<b>Demo</b> — Routing, Patch und Monitor in Aktion`,
 n1:`Funktionen`, n2:`Screenshots`, n3:`So funktioniert's`, n4:`Dokumentation`, n5:`Preise`,
@@ -130,6 +133,7 @@ fl1:`Funktionen`, fl2:`Dokumentation`, fl3:`Preise`
 };
 
 window.I18N.zh = {
+intro:`<p>Art-Net Remapper 作为代理工作于 Art-Net 源（控制台或灯光软件）和目标（3D 可视化软件或物理硬件）之间。它接收 Art-Net 数据包，应用逐通道映射（即 routing），并在不同的 universe 上重新发送，使目标以期望的格式接收数据。</p><p>典型场景：控制台发送的灯具配置文件与可视化软件接受的不匹配。无需在控制台上重新 patch，而是实时重映射通道。</p>`,
 fd1:`具有恒定发送周期的 Art-Net 代理。信号稳定，无可感知延迟。`, fd2:`可视化逐通道 routing：1:1 自动映射、INV 反转、MIN/MAX 限制。`, fd6:`单个 Windows .exe。无需安装。界面支持 6 种语言。`, s1px:`Input IP（监听控制台）和 Output IP（发送目标）。端口 6454。`, s2px:`将源通道连接到目标，或使用 1:1 自动映射。`, s3px:`universe+地址 IN → routing → universe+地址 OUT。`, s4px:`按 START，重映射即实时运行。`, s5px:`实时查看 DMX 值的进出。`, helpnote:`完整指南在应用的 Help 标签页中。`,
 c0:`<b>演示</b> — routing、patch 和监视器实际操作`,
 n1:`功能`, n2:`截图`, n3:`工作原理`, n4:`文档`, n5:`价格`,
@@ -172,6 +176,7 @@ fl1:`功能`, fl2:`文档`, fl3:`价格`
 };
 
 window.I18N.ja = {
+intro:`<p>Art-Net RemapperはArt-Netソース（卓や照明ソフト）と出力先（3Dビジュアライザーや実機）の間でプロキシとして動作します。Art-Netパケットを受信し、チャンネルごとのマッピング（ルーティング）を適用して別のユニバースで再送信するため、出力先は期待する形式でデータを受け取れます。</p><p>典型例：卓が送るフィクスチャプロファイルがビジュアライザーの受け付けるものと一致しない場合。卓をパッチし直す代わりに、チャンネルをリアルタイムでリマップします。</p>`,
 fd1:`一定の送信サイクルを持つArt-Netプロキシ。安定した信号、体感遅延なし。`, fd2:`ビジュアルなチャンネル間ルーティング：1:1オートマップ、INV反転、MIN/MAXリミット。`, fd6:`単一のWindows .exe。インストール不要。6言語対応のUI。`, s1px:`Input IP（卓を受信）とOutput IP（送信先）。ポート6454。`, s2px:`ソースチャンネルを接続、または1:1オートマップ。`, s3px:`ユニバース+アドレス IN → ルーティング → ユニバース+アドレス OUT。`, s4px:`STARTを押せばリマップがリアルタイムで動作。`, s5px:`DMX値の入出力をライブで確認。`, helpnote:`完全ガイドはアプリのHelpタブにあります。`,
 c0:`<b>デモ</b> — ルーティング、パッチ、モニターの実演`,
 n1:`機能`, n2:`スクリーンショット`, n3:`仕組み`, n4:`ドキュメント`, n5:`価格`,
