@@ -256,7 +256,7 @@ section { padding: 80px 0; }
 .feature p { color: var(--text-mute); font-size: 14.5px; }
 
 /* SHOWCASE: real screenshots */
-.showcase { padding: 70px 0 30px; }
+.showcase { padding: 40px 0 30px; }
 .shot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 940px; margin: 0 auto; }
 @media(max-width: 720px){ .shot-grid { grid-template-columns: 1fr; } }
 .shot {
@@ -374,7 +374,6 @@ code.kbd {
       Art-Net Remapper
     </div>
     <div class="nav-links">
-      <a href="#features" data-i="n1">Funcionalidades</a>
       <a href="#imagens" data-i="n2">Imagens</a>
       <a href="#how" data-i="n3">Como funciona</a>
       <a href="#docs" data-i="n4">Documentação</a>
@@ -438,56 +437,10 @@ code.kbd {
   </div>
 </div>
 
-<section id="features">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag" data-i="fet">Porquê</div>
-      <h2 data-i="feh">Feito para quem programa luz a sério</h2>
-      <p data-i="fep">Sem latência percetível, sem dependências externas. Apenas o sinal a chegar onde precisa.</p>
-    </div>
-    <div class="features">
-      <div class="feature reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3 data-i="ft1">Tempo real</h3>
-        <p data-i="fd1">Ciclo de envio constante que transmite todos os universos sem saltos nem rate-limiting. O sinal é estável e previsível.</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 8h7m0 0V4m0 4v4m9 4h-7m0 0v4m0-4V8" stroke-linecap="round"/></svg></div>
-        <h3 data-i="ft2">Remapping flexível</h3>
-        <p data-i="fd2">Routings visuais canal-a-canal: auto-map 1:1, inversão com INV, limites MIN/MAX por canal. Duplica, exporta e importa routings.</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></div>
-        <h3 data-i="ft3">Monitor e Log</h3>
-        <p data-i="fd3">Acompanha o tráfego Art-Net em direto e diagnostica problemas com um registo detalhado de tudo o que entra e sai.</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14m-7-7l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3 data-i="ft4">Passthrough seguro</h3>
-        <p data-i="fd4">Os universos de destino nunca são sobrescritos por pacotes de entrada — adeus saltos intermitentes de fixtures.</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3m10-10h-3M5 12H2m15.5-6.5l-2 2m-7 7l-2 2m11 0l-2-2m-7-7l-2-2" stroke-linecap="round"/></svg></div>
-        <h3 data-i="ft5">6 idiomas</h3>
-        <p data-i="fd5">Interface disponível em Português, Inglês, Francês, Alemão, Chinês e Japonês. Trabalha na tua língua.</p>
-      </div>
-      <div class="feature reveal">
-        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg></div>
-        <h3 data-i="ft6">Standalone</h3>
-        <p data-i="fd6">Executável único para Windows. Sem instalação complexa, sem runtimes externos. Abre e está a funcionar.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <div class="showcase" id="imagens">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag" data-i="sct">A aplicação</div>
-      <h2 data-i="sch">Vê em ação</h2>
-      <p data-i="scp">Cria os routings, faz o patch das fixtures e monitoriza o tráfego Art-Net em direto.</p>
-    </div>
-
     <figure class="shot shot-main reveal">
       <video controls preload="metadata" poster="Imagens/Art1.jpg" src="Videos/demo.mp4"></video>
       <figcaption data-i="c0"><b>Demo</b> — routing, patch e monitor em ação</figcaption>
@@ -516,11 +469,6 @@ code.kbd {
 
 <section id="how">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-tag" data-i="hwt">Como funciona</div>
-      <h2 data-i="hwh">Cinco passos até ao sinal certo</h2>
-      <p data-i="hwp">O mesmo workflow que encontras no separador Help da aplicação.</p>
-    </div>
     <div class="steps">
       <div class="step reveal">
         <div class="num">1</div>
@@ -660,7 +608,6 @@ code.kbd {
       Art-Net Remapper
     </div>
     <div class="foot-links">
-      <a href="#features" data-i="fl1">Funcionalidades</a>
       <a href="#docs" data-i="fl2">Documentação</a>
     </div>
     <div class="foot-copy">@JNeves · 2026 · Art-Net™ Designed by and Copyright Artistic Licence Holdings Ltd</div>
