@@ -4,12 +4,13 @@ window.I18N._ck = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path
 const _ck = window.I18N._ck;
 
 window.I18N.en = {
+fd1:`Art-Net proxy with a constant output cycle. Stable signal, no perceptible latency.`, fd2:`Visual channel-to-channel routings: 1:1 auto-map, INV inversion, MIN/MAX limits.`, fd6:`A single Windows .exe. No install. Interface in 6 languages.`, s1px:`Input IP (where you listen to the console) and Output IP (where you send). Port 6454.`, s2px:`Connect source channels to destination, or use 1:1 auto-map.`, s3px:`Universe+address IN → routing → universe+address OUT.`, s4px:`Press START and the remap runs in real time.`, s5px:`Watch DMX values coming in and going out, live.`, helpnote:`The full guide is in the app's Help tab.`,
 c0:`<b>Demo</b> — routing, patch and monitor in action`,
 n1:`Features`, n2:`Screenshots`, n3:`How it works`, n4:`Documentation`, n5:`Pricing`,
 eb:`<span class="dot"></span>Windows · Art-Net / DMX512 · Real-time`,
 h1:`Remap Art-Net channels <em>in real time</em>`,
 sub:`Make your lighting console talk to any 3D visualizer. Art-Net Remapper translates channels between fixtures with different layouts — no reprogramming, no latency.`,
-b1:`Free download`, b2:`See how it works`, meta:`Free version · No sign-up`,
+b1:`Free download`, b2:`See how it works`, meta:`Windows · Free version · No sign-up`,
 f1a:`Console`, f1c:`Programmed on your controller`, f2b:`Real-time remap`, f2c:`1-to-1 channel translation`, f3a:`3D Visualizer`, f3c:`The only one in the library`,
 fet:`Why`, feh:`Built for serious lighting programmers`, fep:`No perceptible latency, no external dependencies. Just the signal arriving where it needs to.`,
 ft1:`Real time`, fd1:`Constant output cycle that transmits every universe with no jumps and no rate-limiting. The signal is stable and predictable.`,
@@ -45,12 +46,13 @@ fl1:`Features`, fl2:`Documentation`, fl3:`Pricing`
 };
 
 window.I18N.fr = {
+fd1:`Proxy Art-Net à cycle d'envoi constant. Signal stable, sans latence perceptible.`, fd2:`Routings visuels canal par canal : auto-map 1:1, inversion INV, limites MIN/MAX.`, fd6:`Un seul .exe Windows. Sans installation. Interface en 6 langues.`, s1px:`Input IP (où vous écoutez la console) et Output IP (où vous envoyez). Port 6454.`, s2px:`Reliez les canaux source aux destinations, ou auto-map 1:1.`, s3px:`Univers+adresse IN → routing → univers+adresse OUT.`, s4px:`Appuyez sur START et le remap tourne en temps réel.`, s5px:`Voyez les valeurs DMX entrer et sortir, en direct.`, helpnote:`Le guide complet est dans l'onglet Help de l'application.`,
 c0:`<b>Démo</b> — routing, patch et monitor en action`,
 n1:`Fonctionnalités`, n2:`Captures`, n3:`Fonctionnement`, n4:`Documentation`, n5:`Tarifs`,
 eb:`<span class="dot"></span>Windows · Art-Net / DMX512 · Temps réel`,
 h1:`Remappez les canaux Art-Net <em>en temps réel</em>`,
 sub:`Faites parler votre console lumière avec n'importe quel visualiseur 3D. Art-Net Remapper traduit les canaux entre des fixtures aux layouts différents — sans reprogrammer, sans latence.`,
-b1:`Télécharger gratuitement`, b2:`Voir le fonctionnement`, meta:`Version gratuite · Sans inscription`,
+b1:`Télécharger gratuitement`, b2:`Voir le fonctionnement`, meta:`Windows · Version gratuite · Sans inscription`,
 f1a:`Console`, f1c:`Programmée sur votre contrôleur`, f2b:`Remap en temps réel`, f2c:`Traduction de canaux 1-pour-1`, f3a:`Visualiseur 3D`, f3c:`Le seul dans la bibliothèque`,
 fet:`Pourquoi`, feh:`Conçu pour ceux qui programment la lumière sérieusement`, fep:`Pas de latence perceptible, pas de dépendances externes. Juste le signal qui arrive là où il faut.`,
 ft1:`Temps réel`, fd1:`Cycle d'envoi constant qui transmet tous les univers sans sauts ni rate-limiting. Le signal est stable et prévisible.`,
@@ -86,12 +88,13 @@ fl1:`Fonctionnalités`, fl2:`Documentation`, fl3:`Tarifs`
 };
 
 window.I18N.de = {
+fd1:`Art-Net-Proxy mit konstantem Sendezyklus. Stabiles Signal, keine spürbare Latenz.`, fd2:`Visuelle Kanal-zu-Kanal-Routings: 1:1-Auto-Map, INV-Invertierung, MIN/MAX-Limits.`, fd6:`Eine einzige Windows-Exe. Keine Installation. Oberfläche in 6 Sprachen.`, s1px:`Input IP (wo du das Pult empfängst) und Output IP (wohin du sendest). Port 6454.`, s2px:`Quellkanäle mit Zielen verbinden, oder 1:1-Auto-Map.`, s3px:`Universum+Adresse IN → Routing → Universum+Adresse OUT.`, s4px:`START drücken — das Remap läuft in Echtzeit.`, s5px:`DMX-Werte live beim Ein- und Ausgehen beobachten.`, helpnote:`Die vollständige Anleitung steht im Help-Tab der App.`,
 c0:`<b>Demo</b> — Routing, Patch und Monitor in Aktion`,
 n1:`Funktionen`, n2:`Screenshots`, n3:`So funktioniert's`, n4:`Dokumentation`, n5:`Preise`,
 eb:`<span class="dot"></span>Windows · Art-Net / DMX512 · Echtzeit`,
 h1:`Art-Net-Kanäle <em>in Echtzeit</em> remappen`,
 sub:`Lass dein Lichtpult mit jedem 3D-Visualizer sprechen. Art-Net Remapper übersetzt Kanäle zwischen Fixtures mit unterschiedlichen Layouts — ohne Umprogrammieren, ohne Latenz.`,
-b1:`Kostenlos herunterladen`, b2:`So funktioniert es`, meta:`Gratis-Version · Ohne Registrierung`,
+b1:`Kostenlos herunterladen`, b2:`So funktioniert es`, meta:`Windows · Gratis-Version · Ohne Registrierung`,
 f1a:`Konsole`, f1c:`Auf deinem Controller programmiert`, f2b:`Echtzeit-Remap`, f2c:`1-zu-1-Kanalübersetzung`, f3a:`3D-Visualizer`, f3c:`Das einzige in der Bibliothek`,
 fet:`Warum`, feh:`Gemacht für alle, die Licht ernsthaft programmieren`, fep:`Keine spürbare Latenz, keine externen Abhängigkeiten. Nur das Signal, das ankommt, wo es gebraucht wird.`,
 ft1:`Echtzeit`, fd1:`Konstanter Sendezyklus, der alle Universen ohne Sprünge und ohne Rate-Limiting überträgt. Das Signal ist stabil und vorhersehbar.`,
@@ -127,12 +130,13 @@ fl1:`Funktionen`, fl2:`Dokumentation`, fl3:`Preise`
 };
 
 window.I18N.zh = {
+fd1:`具有恒定发送周期的 Art-Net 代理。信号稳定，无可感知延迟。`, fd2:`可视化逐通道 routing：1:1 自动映射、INV 反转、MIN/MAX 限制。`, fd6:`单个 Windows .exe。无需安装。界面支持 6 种语言。`, s1px:`Input IP（监听控制台）和 Output IP（发送目标）。端口 6454。`, s2px:`将源通道连接到目标，或使用 1:1 自动映射。`, s3px:`universe+地址 IN → routing → universe+地址 OUT。`, s4px:`按 START，重映射即实时运行。`, s5px:`实时查看 DMX 值的进出。`, helpnote:`完整指南在应用的 Help 标签页中。`,
 c0:`<b>演示</b> — routing、patch 和监视器实际操作`,
 n1:`功能`, n2:`截图`, n3:`工作原理`, n4:`文档`, n5:`价格`,
 eb:`<span class="dot"></span>Windows · Art-Net / DMX512 · 实时`,
 h1:`<em>实时</em>重映射 Art-Net 通道`,
 sub:`让你的灯光控制台与任何 3D 可视化软件对话。Art-Net Remapper 在不同布局的灯具之间实时转换通道——无需重新编程，没有延迟。`,
-b1:`免费下载`, b2:`了解工作原理`, meta:`免费版 · 无需注册`,
+b1:`免费下载`, b2:`了解工作原理`, meta:`Windows · 免费版 · 无需注册`,
 f1a:`控制台`, f1c:`在你的控台上编程`, f2b:`实时重映射`, f2c:`1对1通道转换`, f3a:`3D 可视化`, f3c:`库中唯一可用的灯具`,
 fet:`为什么`, feh:`为认真做灯光编程的人打造`, fep:`没有可感知的延迟，没有外部依赖。信号准确到达需要的地方。`,
 ft1:`实时`, fd1:`恒定的发送周期传输所有 universe，无跳变、无限速。信号稳定且可预测。`,
@@ -168,12 +172,13 @@ fl1:`功能`, fl2:`文档`, fl3:`价格`
 };
 
 window.I18N.ja = {
+fd1:`一定の送信サイクルを持つArt-Netプロキシ。安定した信号、体感遅延なし。`, fd2:`ビジュアルなチャンネル間ルーティング：1:1オートマップ、INV反転、MIN/MAXリミット。`, fd6:`単一のWindows .exe。インストール不要。6言語対応のUI。`, s1px:`Input IP（卓を受信）とOutput IP（送信先）。ポート6454。`, s2px:`ソースチャンネルを接続、または1:1オートマップ。`, s3px:`ユニバース+アドレス IN → ルーティング → ユニバース+アドレス OUT。`, s4px:`STARTを押せばリマップがリアルタイムで動作。`, s5px:`DMX値の入出力をライブで確認。`, helpnote:`完全ガイドはアプリのHelpタブにあります。`,
 c0:`<b>デモ</b> — ルーティング、パッチ、モニターの実演`,
 n1:`機能`, n2:`スクリーンショット`, n3:`仕組み`, n4:`ドキュメント`, n5:`価格`,
 eb:`<span class="dot"></span>Windows · Art-Net / DMX512 · リアルタイム`,
 h1:`Art-Netチャンネルを<em>リアルタイム</em>でリマップ`,
 sub:`照明卓をあらゆる3Dビジュアライザーと連携。Art-Net Remapperはレイアウトの異なるフィクスチャ間でチャンネルを変換——再プログラム不要、遅延なし。`,
-b1:`無料ダウンロード`, b2:`仕組みを見る`, meta:`無料版 · 登録不要`,
+b1:`無料ダウンロード`, b2:`仕組みを見る`, meta:`Windows · 無料版 · 登録不要`,
 f1a:`コンソール`, f1c:`コントローラーでプログラム済み`, f2b:`リアルタイム・リマップ`, f2c:`1対1のチャンネル変換`, f3a:`3Dビジュアライザー`, f3c:`ライブラリにある唯一のフィクスチャ`,
 fet:`なぜ`, feh:`本気で照明をプログラムする人のために`, fep:`体感できる遅延なし、外部依存なし。信号を必要な場所へ届けるだけ。`,
 ft1:`リアルタイム`, fd1:`一定の送信サイクルで全ユニバースをジャンプなし・レート制限なしで送信。信号は安定して予測可能。`,
